@@ -23,8 +23,8 @@ const milestones = [
   {
     year: "2024",
     icon: Layers,
-    headline: "First Production App Shipped",
-    body: "Designed, built, and deployed a full-stack application used by real users. React, Node.js, PostgreSQL — the complete loop, end-to-end.",
+    headline: "Becoming a Frontend Professional Developer",
+    body: "Designed, built, and deployed frontend applications using React and modern development practices. Gained experience with state management, component libraries, and responsive design.",
     accent: "violet",
     accentColor: "text-violet-400",
     borderColor: "border-violet-500/40",
@@ -32,13 +32,13 @@ const milestones = [
     barColor: "bg-violet-500",
     dotColor: "bg-violet-400",
     shadowColor: "shadow-violet-500/20",
-    tag: "{ status: 'deployed' }",
+    tag: "{ status: 'frontend' }",
   },
   {
     year: "2025",
     icon: Users,
-    headline: "Freelance & Team Collaboration",
-    body: "Worked alongside cross-functional teams and independent clients. Sharpened my skills in code reviews, agile sprints, and real-world product delivery.",
+    headline: "Becoming a Backend Professional Developer",
+    body: "Expanded my skillset to backend development with Node.js and Express. Built RESTful APIs, worked with databases, and learned about authentication, security, and server-side architecture.",
     accent: "blue",
     accentColor: "text-blue-400",
     borderColor: "border-blue-500/40",
@@ -46,13 +46,13 @@ const milestones = [
     barColor: "bg-blue-500",
     dotColor: "bg-blue-400",
     shadowColor: "shadow-blue-500/20",
-    tag: "{ mode: 'team_player' }",
+    tag: "{ mode: 'backend' }",
   },
   {
     year: "2026",
     icon: Brain,
-    headline: "Building AI-Powered Products",
-    body: "Integrating large language models and intelligent agents into production pipelines. Crafting the next generation of developer tooling and user experiences.",
+    headline: "Freelance & Team Collaboration",
+    body: "Worked alongside cross-functional teams and independent clients. Sharpened my skills in code reviews, agile sprints, and real-world product delivery.",
     accent: "emerald",
     accentColor: "text-emerald-400",
     borderColor: "border-emerald-500/40",
@@ -60,13 +60,16 @@ const milestones = [
     barColor: "bg-emerald-500",
     dotColor: "bg-emerald-400",
     shadowColor: "shadow-emerald-500/20",
-    tag: "{ era: 'AI_native' }",
+    tag: "{ era: 'team_player' }",
   },
 ];
 
 export const Milestones = () => {
   return (
-    <section id="milestones" className="w-full py-32 px-6 relative overflow-hidden">
+    <section
+      id="milestones"
+      className="w-full py-32 px-6 relative overflow-hidden"
+    >
       {/* Background subtle grid */}
       <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
 
@@ -79,7 +82,8 @@ export const Milestones = () => {
             <div className="h-px bg-gradient-to-r from-cyan-500/50 to-transparent flex-grow ml-4" />
           </h2>
           <p className="text-slate-400 text-lg mb-20 max-w-xl">
-            A timeline of defining moments — the milestones that shaped who I am as a developer.
+            A timeline of defining moments — the milestones that shaped who I am
+            as a developer.
           </p>
         </FadeInSection>
 
@@ -94,7 +98,11 @@ export const Milestones = () => {
               const isEven = i % 2 === 0;
 
               return (
-                <FadeInSection key={m.year} direction={isEven ? "right" : "left"} delay={i * 80}>
+                <FadeInSection
+                  key={m.year}
+                  direction={isEven ? "right" : "left"}
+                  delay={i * 80}
+                >
                   <div
                     className={`relative flex items-center gap-8 md:gap-0 ${
                       isEven ? "md:flex-row" : "md:flex-row-reverse"
@@ -155,7 +163,9 @@ export const Milestones = () => {
                               <Icon className="w-3.5 h-3.5" />
                               {m.year}
                             </div>
-                            <span className={`font-mono text-xs ${m.accentColor} opacity-50`}>
+                            <span
+                              className={`font-mono text-xs ${m.accentColor} opacity-50`}
+                            >
                               {m.tag}
                             </span>
                           </div>
@@ -166,14 +176,18 @@ export const Milestones = () => {
                           </h3>
 
                           {/* Body */}
-                          <p className="text-sm text-slate-400 leading-relaxed">{m.body}</p>
+                          <p className="text-sm text-slate-400 leading-relaxed">
+                            {m.body}
+                          </p>
 
                           {/* Bottom divider */}
                           <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
                             <span className="text-xs tracking-widest text-slate-600 uppercase font-mono">
                               milestone_{String(i + 1).padStart(2, "0")}
                             </span>
-                            <Icon className={`w-4 h-4 ${m.accentColor} opacity-50`} />
+                            <Icon
+                              className={`w-4 h-4 ${m.accentColor} opacity-50`}
+                            />
                           </div>
                         </div>
                       </TiltCard>
