@@ -9,56 +9,62 @@ export const BackgroundVFX = () => {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        .glass-panel {
-          background: rgba(15, 23, 42, 0.6);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          /* border removed to eliminate outline */
-          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-        .text-glow {
-          text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
-        }
         .bg-grid {
-          background-size: 50px 50px;
+          background-size: 60px 60px;
           background-image: 
-            linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-          mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+          mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
         }
         @keyframes float {
           0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
+          50% { transform: translateY(-10px); }
           100% { transform: translateY(0px); }
         }
         .animate-float {
-          animation: float 6s ease-in-out infinite;
+          animation: float 8s ease-in-out infinite;
         }
         .animate-float-delayed {
-          animation: float 6s ease-in-out 3s infinite;
+          animation: float 8s ease-in-out 4s infinite;
         }
-        @keyframes scanline {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100vh); }
+        @keyframes blob-drift-1 {
+          0% { transform: translate(0px, 0px) scale(1); }
+          50% { transform: translate(60px, 40px) scale(1.1); }
+          100% { transform: translate(0px, 0px) scale(1); }
         }
-        .scanline {
-          position: fixed;
-          top: 0; left: 0; right: 0; height: 10vh;
-          background: linear-gradient(to bottom, transparent, rgba(34,211,238,0.05), transparent);
-          animation: scanline 8s linear infinite;
-          pointer-events: none;
-          z-index: 50;
+        @keyframes blob-drift-2 {
+          0% { transform: translate(0px, 0px) scale(1.2); }
+          50% { transform: translate(-50px, -60px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1.2); }
+        }
+        .animate-blob-1 {
+          animation: blob-drift-1 20s ease-in-out infinite;
+        }
+        .animate-blob-2 {
+          animation: blob-drift-2 25s ease-in-out infinite;
         }
       `,
         }}
       />
+      
+      {/* Background Grid */}
+      <div className="fixed inset-0 z-0 bg-grid pointer-events-none opacity-60" />
+
+      {/* Ambient Mesh Blobs */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[20%] left-[10%] w-[45vw] h-[45vw] rounded-full bg-zinc-900/10 blur-[120px] animate-blob-1" />
+        <div className="absolute bottom-[20%] right-[10%] w-[50vw] h-[50vw] rounded-full bg-neutral-900/10 blur-[130px] animate-blob-2" />
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[35vw] h-[35vw] rounded-full bg-zinc-800/5 blur-[100px]" />
+      </div>
+
+      {/* Mouse Spotlight */}
       <div
         className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-300"
         style={{
-          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34, 211, 238, 0.07), transparent 40%)`,
+          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.025), transparent 60%)`,
         }}
       />
-      <div className="scanline" />
     </>
   );
 };
+

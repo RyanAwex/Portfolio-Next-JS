@@ -15,34 +15,34 @@ const CopyrightYear = () => {
 
 export const Footer = () => {
   return (
-    <footer className="w-full py-8 text-center border-t border-slate-800/50 mt-10">
+    <footer className="w-full py-12 text-center border-t border-zinc-900 mt-20">
       <div className="flex justify-center gap-6 mb-4">
         <a
           href={links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-500 hover:text-cyan-400 transition-colors"
+          className="text-zinc-500 hover:text-white transition-colors duration-200"
         >
-          <Github className="w-5 h-5" />
+          <Github className="w-4 h-4" />
         </a>
         <a
           href={links.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-500 hover:text-cyan-400 transition-colors"
+          className="text-zinc-500 hover:text-white transition-colors duration-200"
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-4 h-4" />
         </a>
         <a
           href={links.email}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-500 hover:text-cyan-400 transition-colors"
+          className="text-zinc-500 hover:text-white transition-colors duration-200"
         >
-          <Mail className="w-5 h-5" />
+          <Mail className="w-4 h-4" />
         </a>
       </div>
-      <p className="text-slate-500 font-mono text-sm">
+      <p className="text-zinc-650 font-mono text-[10px] tracking-wider uppercase">
         &copy;{" "}
         <Suspense fallback={2026}>
           <CopyrightYear />

@@ -33,7 +33,7 @@ const ProjectsLoading = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans overflow-x-hidden selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans overflow-x-hidden selection:bg-zinc-800 selection:text-white">
       <BackgroundVFX />
       <Navbar />
 

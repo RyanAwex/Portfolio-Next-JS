@@ -39,26 +39,33 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-panel py-3" : "py-6 bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center px-4 ${scrolled ? "pt-4 md:pt-6" : "pt-6"}`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div
+        className={`w-full flex justify-between items-center px-6 transition-all duration-300 ${
+          scrolled
+            ? "bg-zinc-900/70 backdrop-blur-md border border-white/15 shadow-2xl py-3 rounded-full"
+            : "py-4 bg-transparent border border-transparent"
+        }`}
+        style={{ maxWidth: scrolled ? "896px" : "100%" }}
+      >
         <Link
           href="#hero"
-          className="text-xl font-bold tracking-tighter flex items-center gap-2 z-50 relative"
+          className="text-lg font-bold tracking-tight flex items-center gap-2 z-50 relative"
         >
-          <Cpu className="text-cyan-400 w-6 h-6 animate-pulse" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-violet-500">
-            RS.
+          <Cpu className="text-white w-5 h-5 opacity-90" />
+          <span className="text-white tracking-wide font-medium">
+            rayane.sefiani
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 text-sm font-medium tracking-wider text-slate-400">
+        <div className="hidden md:flex gap-8 text-xs font-semibold tracking-wider text-zinc-400">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-white transition-colors duration-200"
             >
               {link.name}
             </Link>
@@ -67,13 +74,13 @@ export const Navbar = () => {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden relative z-50 text-slate-400 hover:text-cyan-400 transition-colors"
+          className="md:hidden relative z-50 text-zinc-400 hover:text-white transition-colors duration-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <X className="w-8 h-8" />
+            <X className="w-6 h-6" />
           ) : (
-            <Menu className="w-8 h-8" />
+            <Menu className="w-6 h-6" />
           )}
         </button>
       </div>
@@ -81,15 +88,15 @@ export const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className={`md:hidden fixed min-h-screen inset-0 top-0 left-0 right-0 bottom-0 z-40 ${scrolled ? "bg-slate-950/98 backdrop-blur-2xl" : "backdrop-blur-2xl"}`}
+          className="md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center"
         >
-          <div className="w-screen h-screen flex flex-col items-center justify-center gap-10">
+          <div className="flex flex-col items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-3xl font-bold text-slate-300 hover:text-cyan-400 transition-colors"
+                className="text-2xl font-bold tracking-wide text-zinc-300 hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
