@@ -101,6 +101,13 @@ export const Milestones = () => {
                       isEven ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
+                    {/* Vertical Year label on mobile */}
+                    <div className="absolute left-0 w-4 md:hidden flex flex-col items-center justify-center font-mono text-[11px] font-bold text-zinc-500/70 tracking-normal leading-[1.2] select-none top-1/2 -translate-y-1/2">
+                      {Array.from(m.year).map((char, idx) => (
+                        <span key={idx}>{char}</span>
+                      ))}
+                    </div>
+
                     {/* Timeline dot */}
                     <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 z-10 flex-shrink-0">
                       <div

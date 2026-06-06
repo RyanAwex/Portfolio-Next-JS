@@ -135,7 +135,7 @@ export const AIChat = () => {
       />
 
       {/* Floating Chat Trigger Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-30">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_12px_40px_rgba(0,0,0,0.6)] cursor-pointer group"
@@ -157,7 +157,7 @@ export const AIChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-[420px] max-w-[calc(100vw-3rem)] z-50 animate-chat-bubble">
+        <div className="fixed bottom-24 right-6 w-[420px] max-w-[calc(100vw-3rem)] z-30 animate-chat-bubble">
           <div className="rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.95)] overflow-hidden flex flex-col h-[520px] bg-zinc-950/80 backdrop-blur-2xl">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/5 bg-zinc-950/60 shrink-0">
