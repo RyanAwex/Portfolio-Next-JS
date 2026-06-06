@@ -5,8 +5,8 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const links = {
   github: "https://github.com/RyanAwex",
-  linkedin: "https://www.linkedin.com/in/rayane-sefiani-13271b332/",
-  email: "mailto:rayanesefiani.dev@gmail.com",
+  linkedin: "https://www.linkedin.com/in/Ryan-sefiani-13271b332/",
+  email: "mailto:ryanawex@gmail.com",
 };
 
 const CopyrightYear = () => {
@@ -47,7 +47,7 @@ export const Footer = () => {
         <Suspense fallback={2026}>
           <CopyrightYear />
         </Suspense>{" "}
-        Rayane Sefiani. All rights reserved.
+        Ryan Awex. All rights reserved.
       </p>
     </footer>
   );

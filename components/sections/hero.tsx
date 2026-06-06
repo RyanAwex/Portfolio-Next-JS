@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Terminal, Zap, Code, ChevronDown, Cpu, Sparkles } from "lucide-react";
+import { Terminal, Zap, Code, ChevronDown, Sparkles } from "lucide-react";
 import { FadeInSection } from "@/components/ui/fade-in-section";
 import { TiltCard } from "@/components/ui/tilt-card";
 import Link from "next/link";
@@ -35,17 +35,19 @@ export const Hero = () => {
               </span>
               System Online
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight text-white">
               I Build <br />
-              <span className="text-zinc-400 font-medium">Digital Realities.</span>
+              <span className="text-zinc-400 font-medium">
+                Digital Realities.
+              </span>
             </h1>
-            
+
             <p className="text-base md:text-lg text-zinc-450 max-w-lg mt-4 leading-relaxed font-normal">
               Full-Stack Developer engineering scalable solutions and immersive
               web experiences with clean, efficient code.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="#projects"
@@ -57,7 +59,8 @@ export const Hero = () => {
                 href="#contact"
                 className="px-6 py-3 rounded-full glass-panel text-white font-medium text-sm hover:bg-white/10 transition-all duration-200 flex items-center gap-2 border border-white/10"
               >
-                <Terminal className="w-4 h-4 text-zinc-400" /> Initialize Contact
+                <Terminal className="w-4 h-4 text-zinc-400" /> Initialize
+                Contact
               </Link>
             </div>
           </FadeInSection>
@@ -69,9 +72,8 @@ export const Hero = () => {
             <TiltCard className="w-[420px] h-[360px]">
               {/* Soft blur highlight backing */}
               <div className="absolute inset-0 bg-gradient-to-tr from-zinc-800/10 to-zinc-950/20 rounded-2xl blur-xl" />
-              
+
               <div className="w-full h-full glass-panel rounded-2xl flex flex-col justify-between relative overflow-hidden border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                
                 {/* Header & Tabs */}
                 <div>
                   {/* Top Bar with controls */}
@@ -81,7 +83,7 @@ export const Hero = () => {
                       <div className="w-2.5 h-2.5 rounded-full bg-zinc-800" />
                       <div className="w-2.5 h-2.5 rounded-full bg-zinc-800" />
                     </div>
-                    
+
                     {/* Interactive Tab Controls */}
                     <div className="flex gap-2">
                       <button
@@ -121,26 +123,53 @@ export const Hero = () => {
                   <div className="p-6 font-mono text-xs text-zinc-350 space-y-2 leading-relaxed">
                     {activeTab === "dev" && (
                       <>
-                        <p className="text-zinc-500">// Object structure representing skills</p>
-                        <p><span className="text-zinc-400">const</span> <span className="text-white">developer</span> = <span className="text-white">{"{"}</span></p>
-                        <p className="pl-4"><span className="text-zinc-400">role</span>: <span className="text-zinc-200">'Full-Stack'</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">status</span>: <span className="text-zinc-200">'Open'</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">passion</span>: <span className="text-zinc-200">true</span></p>
-                        <p><span className="text-white">{"}"}</span>;</p>
+                        <p className="text-zinc-500">
+                          // Object structure representing skills
+                        </p>
+                        <p>
+                          <span className="text-zinc-400">const</span>{" "}
+                          <span className="text-white">developer</span> ={" "}
+                          <span className="text-white">{"{"}</span>
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">role</span>:{" "}
+                          <span className="text-zinc-200">'Full-Stack'</span>,
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">status</span>:{" "}
+                          <span className="text-zinc-200">'Open'</span>,
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">passion</span>:{" "}
+                          <span className="text-zinc-200">true</span>
+                        </p>
+                        <p>
+                          <span className="text-white">{"}"}</span>;
+                        </p>
                         <p className="text-zinc-500 mt-4">// Methods loaded</p>
-                        <p className="text-zinc-300"><span className="text-white">developer</span>.start();</p>
+                        <p className="text-zinc-300">
+                          <span className="text-white">developer</span>.start();
+                        </p>
                       </>
                     )}
 
                     {activeTab === "term" && (
                       <>
                         <p className="text-zinc-500">$ pnpm run build</p>
-                        <p className="text-zinc-300">✓ linting completed successfully</p>
-                        <p className="text-zinc-300">✓ production build compiled [1.2s]</p>
+                        <p className="text-zinc-300">
+                          ✓ linting completed successfully
+                        </p>
+                        <p className="text-zinc-300">
+                          ✓ production build compiled [1.2s]
+                        </p>
                         <p className="text-zinc-300">✓ assets generated</p>
                         <p className="text-zinc-500 mt-4">$ status --online</p>
                         <p className="text-zinc-100 font-semibold flex items-center gap-1.5">
-                          <Cpu className="w-3.5 h-3.5 text-zinc-400 animate-pulse" />
+                          <img
+                            src="/logo.png"
+                            alt="Logo"
+                            className="w-3.5 h-3.5 object-contain animate-pulse brightness-90"
+                          />
                           System online: deployment healthy.
                         </p>
                       </>
@@ -149,10 +178,25 @@ export const Hero = () => {
                     {activeTab === "specs" && (
                       <>
                         <p className="text-zinc-500">{"{"}</p>
-                        <p className="pl-4"><span className="text-zinc-400">"theme"</span>: <span className="text-zinc-200">"Glassmorphism 2.0"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"ide"</span>: <span className="text-zinc-200">"Antigravity"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"environment"</span>: <span className="text-zinc-200">"NextJS 16"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"selection"</span>: <span className="text-zinc-200">"ChatGPT Dark"</span></p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">"theme"</span>:{" "}
+                          <span className="text-zinc-200">
+                            "Glassmorphism 2.0"
+                          </span>
+                          ,
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">"ide"</span>:{" "}
+                          <span className="text-zinc-200">"Antigravity"</span>,
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">"environment"</span>:{" "}
+                          <span className="text-zinc-200">"NextJS 16"</span>,
+                        </p>
+                        <p className="pl-4">
+                          <span className="text-zinc-400">"selection"</span>:{" "}
+                          <span className="text-zinc-200">"ChatGPT Dark"</span>
+                        </p>
                         <p className="text-zinc-500">{"}"}</p>
                       </>
                     )}
@@ -167,7 +211,6 @@ export const Hero = () => {
                   </span>
                   <Code className="text-zinc-400 w-4 h-4" />
                 </div>
-
               </div>
             </TiltCard>
           </FadeInSection>

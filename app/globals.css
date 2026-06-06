@@ -71,11 +71,14 @@ body {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.04);
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
+html, body, .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 

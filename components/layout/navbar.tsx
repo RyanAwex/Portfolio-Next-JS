@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Cpu, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 export const Navbar = () => {
@@ -53,9 +53,23 @@ export const Navbar = () => {
           href="#hero"
           className="text-lg font-bold tracking-tight flex items-center gap-2 z-50 relative"
         >
-          <Cpu className="text-white w-5 h-5 opacity-90" />
+          <div
+            className={`rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+              scrolled
+                ? "w-8 h-8 bg-zinc-900 border border-zinc-800"
+                : "w-8 h-8 bg-transparent border border-transparent"
+            }`}
+          >
+            <img
+              src="/logo.png"
+              alt="Ryan.Awex Logo"
+              className={`object-contain opacity-90 transition-all duration-300 ${
+                scrolled ? "w-4 h-4" : "w-8 h-8"
+              }`}
+            />
+          </div>
           <span className="text-white tracking-wide font-medium">
-            rayane.sefiani
+            Ryan.Awex
           </span>
         </Link>
 
@@ -87,9 +101,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center"
-        >
+        <div className="md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-8">
             {navLinks.map((link) => (
               <Link
